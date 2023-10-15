@@ -1,0 +1,36 @@
+
+
+.discountWrapper{
+    padding: 2rem;
+    background-image:url('../../UI/images/Rectangle2048.svg') ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+.inputWrap{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:1rem;
+    padding: 2rem;
+    width: 50%;
+}
+.discountImgWrap{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dicountTitle{
+    font-size: 7.5em;
+}
+.discountCondition{
+    font-size: 4em;
+}
+.getDiscount{
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}

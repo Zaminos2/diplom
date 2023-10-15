@@ -1,0 +1,33 @@
+.welcomeWrap{
+    background-color: #A1E2EB;
+    display: flex;
+    color: white;
+}
+.welcomeInfoContainer{
+   width: 55%;
+   padding: 3rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 1rem;
+}
+.bannerImg{
+    width: 45%;
+}
+.welcomeTitle{
+    font-size: 5.833em;
+    font-weight: 700;
+}
+.welkomeInfo{
+    font-size: 5.250em;
+    font-weight: 700;
+    
+}
+.saleButton{
+    border: none;
+    border-radius: 13px;
+    padding: 2rem 2rem;
+    width: 10rem;
+    font-size: 2rem;
+    cursor: pointer;
+}
