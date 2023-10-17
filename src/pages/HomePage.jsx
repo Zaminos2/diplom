@@ -1,6 +1,6 @@
 import Catalog from "../components/Catalog";
 import DiscountOffer from "../components/DiscountOffer";
-import Welkome from "../components/Welkome";
+import Welkome from "../components/Welcome";
 
 
 function HomePage(){

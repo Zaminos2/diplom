@@ -1,7 +1,7 @@
- import logoSvg from "./UI/icons/image_logo.svg"
- import basketImg from './UI/icons/icons8-shopping_bag1.svg'
- import welcomeImg from './UI/images/image2.svg'
- import discountImg from './UI/images/image 3.svg'
+ import logoSvg from "./asets/icons/image_logo.svg"
+ import basketImg from './asets/icons/icons8-shopping_bag1.svg'
+ import welcomeImg from './asets/images/image2.svg'
+ import discountImg from './asets/images/image 3.svg'
 
 
  export const logo = logoSvg;
