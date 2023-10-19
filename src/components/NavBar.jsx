@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 
 function NavBar(){
   const navigate = useNavigate();
+  
     return(
       <div className="navContainer">
         <img src={logo} alt="logo.img" className="mainLogo" />
@@ -12,8 +13,8 @@ function NavBar(){
             <div className="rightWrap">
             <div className="navigationBox">
                 <button className="navLinks" onClick={()=>navigate('/')}>HomePage</button>
-                <button className="navLinks" onClick={()=>navigate('/products')}>All Products</button>
-                <button className="navLinks" onClick={()=>navigate('/sales')}>All Sales</button>
+                <button className="navLinks" onClick={()=>navigate('/allProducts')}>All Products</button>
+                <button className="navLinks" onClick={()=>navigate('/allSales')}>All Sales</button>
             </div>
             <img src={basket} alt="basket.Img" className="basket" />
             </div>
