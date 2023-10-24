@@ -1,14 +1,16 @@
+import SalesSlider from "../UI/SalesSlider";
 import Catalog from "../components/Catalog";
 import DiscountOffer from "../components/DiscountOffer";
 import Welkome from "../components/Welcome";
 
-
-function HomePage(){
-    return(<> 
-        <Welkome/>
-       <Catalog/>
-        <DiscountOffer/>
-        </>
-    )
+function HomePage() {
+  return (
+    <>
+      <Welkome />
+      <Catalog />
+      <DiscountOffer />
+      <SalesSlider />
+    </>
+  );
 }
 export default HomePage;

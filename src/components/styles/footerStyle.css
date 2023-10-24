@@ -1,0 +1,45 @@
+.contactContainer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+.footerWrap{
+    padding: 2rem;
+}
+.contactsWrap{
+    max-width: 40%;
+    min-width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.socialWrap{
+    display:flex;
+    gap: 1rem;
+}
+.pohoneNUmber{
+    font-size: 5em;
+    font-weight:600;
+}
+.socialLinkWrap{
+    text-decoration: none;
+    color: black;
+}
+.addressLink{
+    font-size: 3.3em;
+    font-weight:600;
+    color: black;
+    text-decoration-color: rgb(127, 127, 127);
+}
+.workHoursTitle{
+    font-size:1.5em;
+    font-weight: 500;
+}
+.workingHours{
+    font-size:2em;
+    font-weight: 600;
+}
+.mapImg{
+    width: 100%;
+}
