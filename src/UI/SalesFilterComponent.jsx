@@ -1,8 +1,8 @@
-import {Input,Space,Checkbox,Select} from 'antd'
+import {Input,Space,Select} from 'antd'
 import { useDispatch} from 'react-redux'
-import { getMaxPrice, getMinPrice,getSortStatus,toggleIsDiscont} from '../core/redux/categoriesDataSlice';
+import { getMaxPrice, getMinPrice,getSortStatus} from '../core/redux/categoriesDataSlice';
 
-function FilterComponent(){
+function SalesFilterComponent(){
     const dispatch = useDispatch();
     
 
@@ -13,7 +13,6 @@ function FilterComponent(){
                 <Input placeholder='min' defaultValue='' type='number' name='min' onChange={(event)=>{dispatch(getMinPrice(event.target.value))}}/>
                 <Input placeholder='max' defaultValue='' type='number' name='max' onChange={(event)=>{dispatch(getMaxPrice(event.target.value))}}/>
             </Space>
-            <Checkbox onChange={()=>{dispatch(toggleIsDiscont())}}>Disconted Items</Checkbox>
             <Select
             defaultValue='price'
             onChange={(selectedValue)=>{
@@ -33,4 +32,4 @@ function FilterComponent(){
         </div>
     )
 }
-export default FilterComponent;
+export default SalesFilterComponent;

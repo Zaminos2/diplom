@@ -4,6 +4,8 @@
     gap: 1rem;
     align-items: center;
     padding: 1rem;
+    position: relative;
+    z-index: 12;
 }
 .productKard .productImg{
     height: 25em;
@@ -36,4 +38,10 @@
     font-weight: 500;
     font-size: 1.33rem;
     text-align: center;
+}
+.addToCart{
+    position: absolute;
+    z-index: 20;
+    bottom: 50%;
+    
 }

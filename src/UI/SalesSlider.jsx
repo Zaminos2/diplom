@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { feachSales, selectSalesState } from "../core/redux/salesSlice";
+import { feachSales} from "../core/redux/salesSlice";
 import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/grid";
@@ -12,8 +12,9 @@ import "../components/styles/salesSection.css"
 
 function SalesSlider() {
   const dispach = useDispatch();
-  const sales = useSelector(selectSalesState);
-  console.log(sales);
+  const {salesState} = useSelector((state)=> state.salesData);
+
+
   useEffect(() => {
     dispach(feachSales());
   }, [dispach]);
@@ -28,17 +29,19 @@ function SalesSlider() {
       modules={[ Pagination]}
       className="mySwiper"
     >
-      {sales.map((product) => {
+      {salesState.map((product) => {
         
         if(product.discont_price!=null){
         return(
          <SwiperSlide key={product.id}>
             <DiscountProductCard
+            productId={product.id}
              img={product.image}
               price={product.price}
                discountPrice={product.discont_price}
                 discount={calkulateDiscount(product.price,product.discont_price)}
-                productTitle={product.title}/>
+                productTitle={product.title}
+                productData={product}/>
         </SwiperSlide>
         )
         }

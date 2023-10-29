@@ -29,13 +29,26 @@ const categoriesDataSlice = createSlice({
     initialState:{
         categoriesState:[],
         productInCategoryState:[],
+        sortStatus:'price',
+        minPrice:0,
+        maxPrice:15000,
         categoryID:null,
+        isDiscont:false,
         productStatusState:null,
         productErrorState:null,
         statusState:null,
         errorState:null,
     },
     reducers:{
+        getSortStatus(state,action){
+            state.sortStatus = action.payload
+        },
+        getMinPrice(state,action){
+            state.minPrice =action.payload;
+        },
+        getMaxPrice(state,action){
+            state.maxPrice =action.payload;
+        },
         getCategoryId(state,action){
             state.categoryID = action.payload;
             localStorage.setItem('categoryId',action.payload);
@@ -43,31 +56,29 @@ const categoriesDataSlice = createSlice({
         getCategories(state,action){
             state.categoriesState=action.payload;
         },
+        toggleIsDiscont(state){
+            state.isDiscont = !state.isDiscont;
+        }
     },
     extraReducers:(builder)=>{
         builder.addCase(feachCategories.fulfilled,(state,action)=>{
             state.categoriesState = action.payload;
             state.statusState = 'fulfilled';
             state.errorState = null;
-        });
-        builder.addCase(feachCategories.pending,(state)=>{
+        }).addCase(feachCategories.pending,(state)=>{
             state.statusState = 'pending';
             state.errorState = null;
-        });
-        builder.addCase(feachCategories.rejected,(state,action)=>{
+        }).addCase(feachCategories.rejected,(state,action)=>{
             state.statusState = 'rejected';
             state.errorState = action.payload;
-        });
-        builder.addCase(feachProductInCategory.fulfilled,(state,action)=>{
+        }).addCase(feachProductInCategory.fulfilled,(state,action)=>{
             state.productInCategoryState = action.payload;
             state.productStatusState = 'fulfilled';
             state.productErrorState = null;
-        });
-        builder.addCase(feachProductInCategory.pending,(state)=>{
+        }).addCase(feachProductInCategory.pending,(state)=>{
             state.productStatusState = 'pending';
             state.productErrorState = null;
-        });
-        builder.addCase(feachProductInCategory.rejected,(state,action)=>{
+        }).addCase(feachProductInCategory.rejected,(state,action)=>{
             state.productStatusState = 'rejected';
             state.productErrorState = action.payload;
         });
@@ -76,12 +87,5 @@ const categoriesDataSlice = createSlice({
 })
 
 export default categoriesDataSlice.reducer;
-export const selectCategoriesState = (state)=> state.categoriesData.categoriesState;
-export const selectStatusState = (state)=>state.categoriesData.statusState;
-export const selectErrorState = (state)=>state.categoriesData.errorState;
-export const selectProductInCategoryState = (state)=> state.categoriesData.productInCategoryState;
-export const selectProductStatusState = (state)=>state.categoriesData.productStatusState;
-export const selectProductErrorState = (state)=>state.categoriesData.productErrorState;
-export const selectCategoryId = (state)=>state.categoriesData.categoryID;
-export const {getCategories} = categoriesDataSlice.actions;
-export const {getCategoryId} = categoriesDataSlice.actions;
+
+export const {getCategories,getCategoryId,getMinPrice,getMaxPrice,toggleIsDiscont,getSortStatus} = categoriesDataSlice.actions;

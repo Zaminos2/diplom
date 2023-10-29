@@ -4,7 +4,7 @@ import 'swiper/css/free-mode';
 import './styles/categorySwiperStyles.css'
 import { FreeMode} from 'swiper/modules';
 import { useDispatch, useSelector } from "react-redux"
-import { feachCategories, selectCategoriesState,getCategoryId,feachProductInCategory } from "../core/redux/categoriesDataSlice";
+import { feachCategories,getCategoryId} from "../core/redux/categoriesDataSlice";
 import { useEffect } from "react";
 import { BASE_URL } from "../utils";
 import { useNavigate } from "react-router-dom";
@@ -14,11 +14,11 @@ import { useNavigate } from "react-router-dom";
 function CatalogSwiper(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const categories = useSelector(selectCategoriesState);
+    const {categoriesState} = useSelector((state)=>state.categoriesData)
+  
     function handlerProductsInCategory(id) {
         dispatch(getCategoryId(id));
-        dispatch(feachProductInCategory(id))
-        .then(()=>{navigate('/categoryProducts')});
+        navigate('/categoryProducts');
     }
    
     useEffect(()=>{
@@ -33,7 +33,7 @@ function CatalogSwiper(){
         modules={FreeMode}
         className="mySwiper"
         >
-        {categories.map((category)=>{
+        {categoriesState.map((category)=>{
             return(
                 <SwiperSlide key={category.id}>
                     <div className="categoryContainer" onClick={()=>{handlerProductsInCategory(category.id)}}>
