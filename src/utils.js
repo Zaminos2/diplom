@@ -103,6 +103,16 @@
      })
 
   }
+  export function addToCarrt(data,id){
+    const myCart = JSON.parse(localStorage.getItem('productsInCart'))||[];
+    const isExistproduct = myCart.find(product=>product.id===id);
+    if(isExistproduct){
+      isExistproduct.counter++;
+    }else{
+      myCart.push({...data,counter:1});
+    }
+    localStorage.setItem('productsInCart',JSON.stringify(myCart));
+  }
   export function isLoading(state,statusState,errorState){
     return {
       ...state,

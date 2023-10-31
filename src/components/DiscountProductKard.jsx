@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL } from "../utils";
+import { BASE_URL,addToCarrt} from "../utils";
 import "./styles/discountProductKardStyle.css"
 import { getProductId } from "../core/redux/salesSlice";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,7 @@ function DiscountProductCard({img,price,discountPrice,discount,productTitle,prod
    const navigate = useNavigate();
    const {productCounterState} = useSelector((state)=> state.salesData)
    const [isactiv,setIsActiv]=useState(false);
+   console.log(productCounterState)
   
    function handleMouseOn(){
     setIsActiv(true);
@@ -25,8 +26,8 @@ function DiscountProductCard({img,price,discountPrice,discount,productTitle,prod
     navigate('/productDetails');
    }
    function handleSetProductData(){
-   const udatedProduct = {...productData,productCounterState}
-    localStorage.setItem('productsInCart',JSON.stringify(udatedProduct))
+   
+    addToCarrt(productData,productId);
     
    }
 return(
