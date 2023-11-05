@@ -35,3 +35,12 @@
     border: 2px solid white;
     color: white;
 }
+.getDiscount:hover{
+    background-color: white;
+}
+.phoneInput:hover{
+    background-color: white;
+}
+.phoneInput:focus{
+    background-color: white;
+}

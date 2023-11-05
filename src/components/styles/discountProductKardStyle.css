@@ -5,7 +5,7 @@
     align-items: center;
     padding: 1rem;
     position: relative;
-    z-index: 12;
+    z-index: 1;
 }
 .productKard .productImg{
     height: 25em;
@@ -16,7 +16,7 @@
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap:2rem;
     flex-wrap: wrap;
 }
 .discountPrice{
@@ -42,6 +42,6 @@
 .addToCart{
     position: absolute;
     z-index: 20;
-    bottom: 50%;
+    bottom: 60%;
     
 }

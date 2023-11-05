@@ -1,19 +1,18 @@
-import { useDispatch, useSelector } from "react-redux";
-import { BASE_URL,addToCarrt} from "../utils";
+import { useDispatch} from "react-redux";
+import { BASE_URL} from "../utils";
 import "./styles/discountProductKardStyle.css"
 import { getProductId } from "../core/redux/salesSlice";
 import { useNavigate } from "react-router-dom";
 import { Button } from "antd";
 import { useState } from "react";
+import { addToCart } from "../core/redux/cartSlice";
 
 
 
 function DiscountProductCard({img,price,discountPrice,discount,productTitle,productId,productData}){
    const dispach = useDispatch();
    const navigate = useNavigate();
-   const {productCounterState} = useSelector((state)=> state.salesData)
    const [isactiv,setIsActiv]=useState(false);
-   console.log(productCounterState)
   
    function handleMouseOn(){
     setIsActiv(true);
@@ -26,9 +25,7 @@ function DiscountProductCard({img,price,discountPrice,discount,productTitle,prod
     navigate('/productDetails');
    }
    function handleSetProductData(){
-   
-    addToCarrt(productData,productId);
-    
+    dispach(addToCart(productData,productId));
    }
 return(
     <div className="productKard"  onMouseEnter={()=>handleMouseOn()} onMouseLeave={()=>handleMouseLeve()}>

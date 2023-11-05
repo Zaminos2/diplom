@@ -14,6 +14,7 @@
     if(pathname === '/categories')document.title = 'Categories';
     if(pathname === '/categoryProducts')document.title = 'Products in category';
     if(pathname === '/productDetails')document.title = 'Product Details';
+    if(pathname === '/shopCart')document.title = 'Shop Cart';
     if(pathname === '*')document.title = '404 Not Found';
   }
   export function calkulateDiscount(price,discountPrice){
@@ -86,7 +87,7 @@
            img={product.image}
            price={product.price}
            productTitle={product.title}
-           
+           productData={product}
          />
        ) : (
          <DiscountProductCard
@@ -103,16 +104,7 @@
      })
 
   }
-  export function addToCarrt(data,id){
-    const myCart = JSON.parse(localStorage.getItem('productsInCart'))||[];
-    const isExistproduct = myCart.find(product=>product.id===id);
-    if(isExistproduct){
-      isExistproduct.counter++;
-    }else{
-      myCart.push({...data,counter:1});
-    }
-    localStorage.setItem('productsInCart',JSON.stringify(myCart));
-  }
+  
   export function isLoading(state,statusState,errorState){
     return {
       ...state,

@@ -29,7 +29,6 @@ const salesSlice = createSlice({
     initialState:{
         salesState:[],
         productState:{},
-        productCounterState:1,
         statusState:null,
         errorState:null,
         productIdState:null,

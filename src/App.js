@@ -9,11 +9,14 @@ import AllCategories from './pages/AllCategories';
 import ProductsInCategory from './components/ProductsInCategory';
 import ErrorPage from './pages/ErrorPage';
 import ProductDetailsPage from './pages/ProductDetailPage';
+import CartPage from './pages/CartPage';
+import ScrollToTop from './UI/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <Header/>
+      <ScrollToTop/>
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/categories' element={<AllCategories/>}/>
@@ -21,6 +24,7 @@ function App() {
       <Route path='/categoryProducts' element={<ProductsInCategory/>}/>
       <Route path='/Allsales' element={<AllSales/>}/>
       <Route path='/productDetails' element={<ProductDetailsPage/>}/>
+      <Route path='/shopCart' element={<CartPage/>}/>
       <Route path='*' element={<ErrorPage/>}/>
     </Routes>
     <Footer/>

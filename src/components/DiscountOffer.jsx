@@ -25,7 +25,7 @@ function DiscountOffer(){
                 <Space direction="vertical" size='large'>
                     <Space.Compact size="large" style={{width:'65%'}}>
                         <Select defaultValue='+49' options={options}/>
-                        <Input type="text"/>
+                        <Input type="text" className="phoneInput"/>
                     </Space.Compact>
                 </Space>
                 <Button className="getDiscount" size="large" style={{width:'65%'}}>Get a discount</Button>

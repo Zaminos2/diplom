@@ -8,7 +8,7 @@ function Catalog(){
     return (
         <div className="catalogWrap">
         <div className="catalogListWrap">
-            <h2>Catalog</h2>
+            <h2 id="catalog">Catalog</h2>
             <button className="allCategories" onClick={()=>{navigate('/categories')}}>All categories</button>
         </div>
         <CatalogSwiper/>
