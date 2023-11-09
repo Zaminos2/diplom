@@ -4,11 +4,13 @@ import "../components/styles/cartPage.css";
 import { useEffect } from "react";
 import { totalSumm } from "../core/redux/cartSlice";
 import OrderFormComponent from "../components/OrderFormComponent";
+import ModalComponent from "../UI/ModalComponent";
 
 function CartPage() {
   const { cartState, totalSummState } = useSelector((state) => state.shopCart);
+  const {orderStatusState}= useSelector((state)=>state.orderSendSlice)
   const dispatch = useDispatch();
-  console.log(cartState)
+  console.log(orderStatusState)
   
 
   useEffect(() => {
@@ -34,6 +36,7 @@ function CartPage() {
           <OrderFormComponent totalPrice={totalSummState.toFixed(2)}/>
         </div>
       </div>
+      {orderStatusState?(<ModalComponent text={'Order confirmed'}/>):''}
     </div>
   );
 }

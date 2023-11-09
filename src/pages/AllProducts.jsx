@@ -11,6 +11,7 @@ function AllProducts(){
     const {minPrice,maxPrice,isDiscont,sortStatus} = useSelector((state)=>state.categoriesData);
     const {salesState} = useSelector((state)=> state.salesData);
 
+
     useEffect(()=>{
        dispach(feachSales())
     },[dispach])

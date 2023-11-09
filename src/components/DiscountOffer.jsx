@@ -1,6 +1,10 @@
 import { discount } from "../utils";
 import {Button, Input,Select,Space} from "antd"
 import './styles/discountOffer.css'
+import { feachSale, setSaleStatusState } from "../core/redux/orderSendSlice";
+import { useDispatch,useSelector } from "react-redux";
+import { getPhoneData } from "../core/redux/orderSendSlice";
+
 
 
 function DiscountOffer(){
@@ -14,6 +18,12 @@ function DiscountOffer(){
             value:"+380"
         }
     ]
+    const dispatch = useDispatch();
+    const{userPhoneState} = useSelector((state)=>state.orderSendSlice);
+    function handleDiscount(data){
+        dispatch(feachSale(data));
+        setTimeout(()=>dispatch(setSaleStatusState()),2000);
+    }
     return(
         <div className="discountWrapper">
             <div className="discountImgWrap">
@@ -25,10 +35,14 @@ function DiscountOffer(){
                 <Space direction="vertical" size='large'>
                     <Space.Compact size="large" style={{width:'65%'}}>
                         <Select defaultValue='+49' options={options}/>
-                        <Input type="text" className="phoneInput"/>
+                        <Input type="text" 
+                        className="phoneInput"
+                        onChange={(event)=>{dispatch(getPhoneData(event.target.value))}}
+                        defaultValue=''
+                        />
                     </Space.Compact>
                 </Space>
-                <Button className="getDiscount" size="large" style={{width:'65%'}}>Get a discount</Button>
+                <Button className="getDiscount" size="large" style={{width:'65%'}} onClick={()=>{handleDiscount(userPhoneState)}}>Get a discount</Button>
             </div>
         </div>
     )

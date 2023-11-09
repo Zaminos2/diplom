@@ -21,7 +21,7 @@ export const feachOrder = createAsyncThunk(
 export const feachSale = createAsyncThunk(
     'orders/feachSale',async function(phoneData,{rejectWithValue}){
         try{
-             await fetch(`${BASE_URL}/order/send`,{
+             await fetch(`${BASE_URL}/sale/send`,{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
@@ -31,7 +31,7 @@ export const feachSale = createAsyncThunk(
             
         }catch(error){
             console.error(error);
-            return rejectWithValue({message:'Error feach order!'});
+            return rejectWithValue({message:'Error feach sale!'});
         }
     }
 );
@@ -47,7 +47,13 @@ const orderSendSlice =createSlice({
     reducers:{
         getPhoneData(state,{payload}){
             state.userPhoneState = payload
-        }
+        },
+        setOrderStatusState(state){
+            state.orderStatusState = null;
+        },
+        setSaleStatusState(state){
+            state.saleStatusState = null;
+        },
     },
     extraReducers:(builder)=>{
         builder.addCase(feachOrder.fulfilled,(state)=>{
@@ -73,4 +79,4 @@ const orderSendSlice =createSlice({
 });
 
 export default orderSendSlice.reducer;
-export const {getPhoneData} = orderSendSlice.actions;
+export const {getPhoneData,setOrderStatusState,setSaleStatusState} = orderSendSlice.actions;

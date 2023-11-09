@@ -3,7 +3,7 @@ import {
   feachProductInCategory,
 
 } from "../core/redux/categoriesDataSlice";
-import { useEffect,useMemo} from "react";
+import { useEffect} from "react";
 import {productsFilter,discontFilter, sortArray, renderProducts} from "../utils";
 import './styles/productsInCategory.css';
 import FilterComponent from "../UI/FilterComponent";
@@ -22,7 +22,7 @@ function ProductsInCategory() {
     );
 
   }, [categoryID, dispatch]);
-  const filteredArr = useMemo(() => {
+  const filteredArr = useEffect(() => {
     return sortArray(productsFilter(discontFilter(data, isDiscont), minPrice, maxPrice),sortStatus);
   }, [data, minPrice, maxPrice,isDiscont,sortStatus]);
 

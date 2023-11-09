@@ -1,6 +1,6 @@
 import {Input,Button} from 'antd'
 import { useDispatch, useSelector } from 'react-redux';
-import { feachOrder, getPhoneData } from '../core/redux/orderSendSlice';
+import { feachOrder, getPhoneData, setOrderStatusState } from '../core/redux/orderSendSlice';
 import { clearCart } from '../core/redux/cartSlice';
 
 function OrderFormComponent({totalPrice}){
@@ -10,7 +10,8 @@ function OrderFormComponent({totalPrice}){
 
     function handleOrder(data){
         dispatch(feachOrder(data));
-        dispatch(clearCart());
+        dispatch(clearCart())
+        setTimeout(()=>dispatch(setOrderStatusState()),2000);
     }
 
     return(

@@ -1,6 +1,11 @@
 .cartlist{
   width: 60%;   
 }
+.cartWrap{
+    position: relative;
+    left: 0;
+    z-index: 3;
+}
 .cartContainer{
     display: flex;
 }
