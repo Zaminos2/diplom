@@ -20,7 +20,7 @@ function SalesSlider() {
   }, [dispach]);
   return (
     <section className="salesSection">
-        <h2 className="salesSectionTitle">Sale</h2>
+        <h2 id="SalesSection" className="salesSectionTitle">Sale</h2>
     <Swiper
       slidesPerView={4}
      slidesPerGroup={4}

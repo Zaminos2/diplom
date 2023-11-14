@@ -20,20 +20,13 @@ function ProductDetailsPage(){
         if(product.discont_price){
             return(
                 <DiscountedProductDetails
-                title={productState[0].title}
-                price={productState[0].price}
-                discont_price={productState[0].discont_price}
-                description={productState[0].description}
-                productImg={productState[0].image}
+                productData ={product}
                 />
             )
         }else{
             return(
                 <ProductDetails
-                title={productState[0].title}
-                price={productState[0].price}
-                description={productState[0].description}
-                productImg={productState[0].image}
+                productData ={product}
                 />
             )
         }

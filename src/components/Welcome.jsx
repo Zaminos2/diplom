@@ -7,7 +7,9 @@ function Welcome() {
       <div className="welcomeInfoContainer">
         <h1 className="welcomeTitle">Sale</h1>
         <h2 className="welcomeInfo">New Season</h2>
-        <button className="saleButton">Sale</button>
+        <a href="#SalesSection">
+          <button className="saleButton">Sale</button>
+        </a>
       </div>
       <img className="bannerImg" src={bannerImg} alt="bannnerImg" />
     </div>
