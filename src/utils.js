@@ -7,16 +7,46 @@
  import DiscountProductCard from "./components/DiscountProductKard";
 
 
- export function showingPath(pathname){
-    if(pathname === '/')document.title = 'Home Page';
-    if(pathname === '/allProducts')document.title = 'All products';
-    if(pathname === '/allSales')document.title = 'All sales';
-    if(pathname === '/categories')document.title = 'Categories';
-    if(pathname === '/categoryProducts')document.title = 'Products in category';
-    if(pathname === '/productDetails')document.title = 'Product Details';
-    if(pathname === '/shopCart')document.title = 'Shop Cart';
-    if(pathname === '*')document.title = '404 Not Found';
+ export function showingPath(pathname) {
+  switch (pathname) {
+    case '/':
+      document.title = 'Home Page';
+      break;
+    case '/allProducts':
+      document.title = 'All products';
+      break;
+    case '/allSales':
+      document.title = 'All sales';
+      break;
+    case '/categories':
+      document.title = 'Categories';
+      break;
+    case '/categoryProducts':
+      document.title = 'Products in category';
+      break;
+    case '/productDetails':
+      document.title = 'Product Details';
+      break;
+    case '/shopCart':
+      document.title = 'Shop Cart';
+      break;
+    default:
+      document.title = '404 Not Found';
+      break;
   }
+}
+export const ConcatArray = (arr1,arr2,storageKey)=>{
+  if(arr1.length>0&&arr2.length>0){
+    const result = arr1.concat(arr2);
+    localStorage.setItem(storageKey,JSON.stringify(result));
+    return result;
+  }
+}
+export function searchArray(arr,searchValue){
+  return arr.filter((product) => {
+    return product.title.toLowerCase().startsWith(searchValue.toLowerCase());
+  });
+}
   export function calkulateDiscount(price,discountPrice){
     if(price <=0 || discountPrice <=0){
       return 0;

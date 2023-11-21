@@ -1,9 +1,10 @@
 .productsContainer{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    gap: 2rem;
-    padding: 2rem;
+    gap: 2em;
+    padding: 2em;
 }
+
 .productKard .productImg{
     width: 100%;
 }

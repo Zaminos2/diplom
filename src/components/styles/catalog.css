@@ -1,11 +1,11 @@
 .catalogListWrap{
     display: flex;
     align-items: center;
-    gap: 5rem;
-    margin: 3rem 0 2rem 3rem;
+    justify-content: space-between;
+    width: 80%;
     font-size: 3.3em;
 }
 .allCategories{
-    padding: 0.5rem;
+    padding: 0.5em;
     cursor: pointer;
 }

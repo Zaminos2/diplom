@@ -1,21 +1,35 @@
 .navContainer{
     display: flex;
+    width: 90%;
     align-items: center;
-    margin:2rem 2rem 5rem ;
+    margin:2em 2em 1em ;
     
 }
 .mainLogo{
     cursor: pointer;
+
 }
 .navLinksWrap{
     display: flex;
     width: 90%;
     justify-content:space-between ;
-    margin-left: 3rem;
+    margin-left: 3em;
+}
+.categoryProductsWrap{
+    margin-top: 3em;
+}
+.productDetailwrap{
+    margin-top: 3em;
+}
+.cartWrap{
+    margin-top: 3em;
+}
+.mainWrap{
+    margin-top: 3em;
 }
 .CatalogBtn{
     background-color: #339933;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 1em;
     color:white;
     border: 2px solid #339933;
     border-radius: 5px;
@@ -23,7 +37,7 @@
 }
 .navigationBox{
     display: flex;
-    gap: 2rem;
+    gap: 2em;
     justify-self: flex-end;
     align-items: center;
     
@@ -38,10 +52,43 @@
 }
 .rightWrap{
     display: flex;
-    gap:4rem;
+    gap:4em;
      width:40%;
      justify-content: space-between;
 }
 .basket{
     cursor: pointer;
+}
+.searchInput{
+    width: 100%;
+}
+.navWrap{
+    width: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    z-index: 70;
+   
+}
+.searchContainer{
+    position: relative;
+    width: 40%;
+    margin-bottom: 2em;
+}
+.listContainer{
+    position: absolute;
+    top:100%;
+    z-index: 71;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 20em;
+    box-shadow: 8px 8px 10px grey;
+}
+.drawerWrap{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
 }

@@ -1,9 +1,9 @@
 .salesSection{
     display: flex;
     flex-direction: column;
-    gap:1rem;
+    gap:1em;
 }
 .salesSectionTitle{
     font-size: 5em;
-    margin-left: 2rem;
+    margin-left: 1em;
 }

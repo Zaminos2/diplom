@@ -1,21 +1,21 @@
 
 
 .discountWrapper{
-    padding: 2rem;
+    padding: 2em;
     background-image:url('../../asets/images/Rectangle2048.svg') ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
-    margin: 3rem 0;
+    margin: 3em 0;
 }
 .inputWrap{
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap:1rem;
-    padding: 2rem;
+    gap:1em;
+    padding: 2em;
     width: 50%;
 }
 .discountImgWrap{

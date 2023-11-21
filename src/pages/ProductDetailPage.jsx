@@ -13,7 +13,6 @@ function ProductDetailsPage(){
     useEffect(()=>{
         dispach(feachProduct(productIdState?productIdState:localStorage.getItem('productId')))
     },[dispach,productIdState]);
-    console.log(productState[0],productIdState)
 
     if (Array.isArray(productState) && productState.length > 0) {
         const product = productState[0];

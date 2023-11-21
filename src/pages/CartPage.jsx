@@ -5,13 +5,13 @@ import { useEffect } from "react";
 import { totalSumm } from "../core/redux/cartSlice";
 import OrderFormComponent from "../components/OrderFormComponent";
 import ModalComponent from "../UI/ModalComponent";
+import { useNavigate } from "react-router-dom";
 
 function CartPage() {
+  const navigate = useNavigate();
   const { cartState, totalSummState } = useSelector((state) => state.shopCart);
   const {orderStatusState}= useSelector((state)=>state.orderSendSlice)
   const dispatch = useDispatch();
-  console.log(orderStatusState)
-  
 
   useEffect(() => {
     dispatch(totalSumm());
@@ -22,7 +22,7 @@ function CartPage() {
       <div className="cartContainer">
         <div className="cartlist">
         <div className="returnContainer">
-          <p>Back to the Store</p>
+          <p className="returnToStore" onClick={()=>navigate(-1)} >Back to the Store</p>
         </div>
           {cartState.map((product) => {
             return (

@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 2em;
 }
 .footerWrap{
-    padding: 2rem;
+    padding: 2em;
 }
 .contactsWrap{
     max-width: 40%;
@@ -16,7 +16,7 @@
 }
 .socialWrap{
     display:flex;
-    gap: 1rem;
+    gap: 1em;
 }
 .pohoneNUmber{
     font-size: 5em;

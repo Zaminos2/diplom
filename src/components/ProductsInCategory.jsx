@@ -14,7 +14,6 @@ function ProductsInCategory() {
 
   const {categoryID,minPrice,maxPrice,productInCategoryState,isDiscont,sortStatus,productStatusState} = useSelector((state)=>state.categoriesData)
   const { category, data } = productInCategoryState;
-  console.log(productInCategoryState);
   useEffect(() => {
     dispatch(
       feachProductInCategory(

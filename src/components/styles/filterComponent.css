@@ -1,6 +1,6 @@
 .filterContainer{
     display: flex;
-    gap: 2rem;
+    gap: 2em;
     align-items: center;
-    margin: 2rem 0 0 2rem;
+    margin: 2rem 0 0 2em;
 }

@@ -5,11 +5,11 @@
 }
 .welcomeInfoContainer{
    width: 55%;
-   padding: 3rem;
+   padding: 3em;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   gap: 1rem;
+   gap: 1em;
 }
 .bannerImg{
     width: 45%;
@@ -26,8 +26,8 @@
 .saleButton{
     border: none;
     border-radius: 13px;
-    padding: 2rem 2rem;
-    width: 10rem;
-    font-size: 2rem;
+    padding: 1em 1em;
+    width: 5em;
+    font-size: 2em;
     cursor: pointer;
 }

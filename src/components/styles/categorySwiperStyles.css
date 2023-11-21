@@ -16,7 +16,7 @@
     position: relative;
 }
 img.categoryImg{
-  height: 350px;
+  height: 200px;
 }
 .categoryContainer{
   display: flex;
@@ -24,7 +24,7 @@ img.categoryImg{
   align-items: center;
 }
 .categoryTitle{
-  margin: 1rem;
+  margin: 1em;
   font-size: 1.125em;
   font-weight: 600;
 }
