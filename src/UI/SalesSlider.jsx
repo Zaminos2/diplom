@@ -12,7 +12,7 @@ import "../components/styles/salesSection.css"
 
 function SalesSlider() {
   const dispach = useDispatch();
-  const {salesState} = useSelector((state)=> state.salesData);
+  const salesState = useSelector((state)=> state.salesData.salesState);
 
 
   useEffect(() => {
@@ -28,6 +28,12 @@ function SalesSlider() {
       spaceBetween={20}
       modules={[ Pagination]}
       className="mySwiper"
+      // breakpoints={{
+      //   400: {
+      //     slidesPerView: 2,
+      //     slidesPerGroup: 2,
+      //   },
+      // }}
     >
       {salesState.map((product) => {
         

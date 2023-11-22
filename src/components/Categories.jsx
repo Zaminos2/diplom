@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Categories(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {categoriesState} = useSelector((state)=>state.categoriesData)
+    const categoriesState = useSelector((state)=>state.categoriesData.categoriesState)
     useEffect(()=>{
         dispatch(feachCategories())
     },[dispatch]);

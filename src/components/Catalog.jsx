@@ -7,7 +7,7 @@ import LoadingComponent from "../UI/LoadingComponent";
 
 function Catalog(){
  const navigate = useNavigate();
- const{statusState} =useSelector((state)=>state.categoriesData);
+ const statusState =useSelector((state)=>state.categoriesData.statusState);
     return (
         <div className="catalogWrap">
         <div className="catalogListWrap">

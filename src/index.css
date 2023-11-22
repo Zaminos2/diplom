@@ -4,7 +4,18 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
+.salesSectionTitle{
+  font-size: 5em;
+  margin-left: 1em;
+}
+.saleButton{
+  border: none;
+  border-radius: 13px;
+  padding: 1em 1em;
+  width: 5em;
+  font-size: 2em;
+  cursor: pointer;
+}
 ::-webkit-scrollbar {
     width: 20px;
     
@@ -37,4 +48,22 @@
     .productDescription {
       font-size: 2em;
     }
+    .salesSectionTitle {
+      font-size: 3em;
+      margin-left: 1em;
+  }
+  #catalog{
+    font-size: 0.7em;
+    margin-left: 1em;
+  }
+  .discountImg{
+    width: 100%;
+    object-fit: contain;
+  }
+  .discountWrapper{
+    flex-direction: column;
+  }
+  .saleButton{
+    font-size: 1em
+  }
   }

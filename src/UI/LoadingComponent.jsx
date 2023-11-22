@@ -5,7 +5,6 @@ import '../components/styles/loading.css'
 function LoadingComponent(){
     return(
     <div className="loadingwrap">
-
             <p className="Loader">Loading</p>
             <ThreeDots
              height={80}

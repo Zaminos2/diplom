@@ -1,6 +1,5 @@
 .productContainer{
     display:flex ;
-
 }
 .productImgContainer{
    min-width: 60%;
@@ -21,4 +20,9 @@
 }
 .detailTitle{
     margin-left: 1em;
+}
+@media (max-width: 400px){
+    .productContainer{
+        flex-wrap: wrap;
+    }
 }

@@ -43,3 +43,21 @@
 .mapImg{
     width: 100%;
 }
+@media (max-width: 400px){
+    .contactsWrap{
+        width: 100%;
+    }
+    .pohoneNUmber{
+        font-size: 2em;
+    }
+    .addressLink{
+        font-size: 2em;
+    }
+    .contactsWrap{
+        max-width: 100%;
+        min-width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

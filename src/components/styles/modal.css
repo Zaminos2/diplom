@@ -20,3 +20,8 @@
     border-radius: 15px;
     box-shadow: 12px 12px 6px gray;
 }
+@media (max-width: 400px){
+    .modalContainer{
+        width: 60%;
+    }
+}

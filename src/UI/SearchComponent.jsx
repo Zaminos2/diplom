@@ -6,8 +6,8 @@ import SearchListRender from "../components/SearchListRender";
 
 
 function SearchComponent() {
-  const { categoriesState } = useSelector((state) => state.categoriesData);
-  const { salesState } = useSelector((state) => state.salesData);
+  const  categoriesState  = useSelector((state) => state.categoriesData.categoriesState);
+  const  salesState  = useSelector((state) => state.salesData.salesState);
   const [searchValue,setSearchValue] = useState('');
   const [searchResult,setSearchResult]= useState([]);
     

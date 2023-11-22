@@ -6,7 +6,7 @@ import Welkome from "../components/Welcome";
 import ModalComponent from "../UI/ModalComponent";
 
 function HomePage() {
-  const{saleStatusState}=useSelector((state)=>state.orderSendSlice);
+  const saleStatusState=useSelector((state)=>state.orderSendSlice.saleStatusState);
   return (
     <div className="mainWrap">
       <Welkome />

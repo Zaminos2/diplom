@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 function CatalogSwiper(){
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const {categoriesState} = useSelector((state)=>state.categoriesData)
+    const categoriesState = useSelector((state)=>state.categoriesData.categoriesState)
   
     function handlerProductsInCategory(id) {
         dispatch(getCategoryId(id));
