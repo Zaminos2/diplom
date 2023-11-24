@@ -28,12 +28,16 @@ function SalesSlider() {
       spaceBetween={20}
       modules={[ Pagination]}
       className="mySwiper"
-      // breakpoints={{
-      //   400: {
-      //     slidesPerView: 2,
-      //     slidesPerGroup: 2,
-      //   },
-      // }}
+      breakpoints={{
+        400: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        768:{
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        }
+      }}
     >
       {salesState.map((product) => {
         

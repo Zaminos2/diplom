@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { feachOrder, setOrderStatusState } from '../core/redux/orderSendSlice';
 import { clearCart } from '../core/redux/cartSlice';
 
+
 function OrderFormComponent({ totalPrice }) {
   const dispatch = useDispatch();
 
@@ -21,7 +22,9 @@ function OrderFormComponent({ totalPrice }) {
     dispatch(clearCart());
     setTimeout(() => dispatch(setOrderStatusState()), 2000);
   };
-
+  function handleClear(){
+    dispatch(clearCart());
+  }
   return (
     <div className="formWrap">
       <h2 className="orderTitle">Order Details</h2>
@@ -59,6 +62,9 @@ function OrderFormComponent({ totalPrice }) {
 
       <Button className="orderButton" size="large" onClick={handleSubmit(onSubmit)}>
         Order
+      </Button>
+      <Button className="orderButton" size="large" onClick={handleClear}>
+        Clear cart
       </Button>
     </div>
   );

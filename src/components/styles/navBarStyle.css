@@ -90,7 +90,31 @@
 .drawerWrap{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2em;
+}
+.burgerWrap{
+    position: relative;
+    left: 0;
+}
+.basketwrap{
+    position: relative;
+    left: 0;
+    width: 30px;
+    height: 30px;
+}
+.cartCounter{
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    z-index: 80;
+    border-radius: 50%;
+    padding: 1px 3px;
+    background-color: red;
+}
+.counterValue{
+    color: white;
+    font-size: 10px;
 }
 @media (max-width: 400px){
     .listContainer{

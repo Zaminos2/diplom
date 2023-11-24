@@ -3,10 +3,13 @@ import { useMediaQuery } from "react-responsive";
 import { basket, logo } from "../utils";
 import "./styles/navBarStyle.css";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Burger from "../UI/Burger";
+import CartCounter from "../UI/CartCounter";
 
 function NavBar() {
   const navigate = useNavigate();
+  const cartState = useSelector((state)=>state.shopCart.cartState);
   const isMobile = useMediaQuery({ query: "(max-width:768px)" });
   return (
     <div className="navWrap">
@@ -24,7 +27,7 @@ function NavBar() {
             </button>
           </a>
           {isMobile ? (
-            <Burger />
+            <Burger/>
           ) : (
             <div className="rightWrap">
               <div className="navigationBox">
@@ -44,12 +47,15 @@ function NavBar() {
                   All Sales
                 </button>
               </div>
+              <div className="basketwrap">
               <img
                 src={basket}
                 alt="basket.Img"
                 className="basket"
                 onClick={() => navigate("/shopCart")}
               />
+              {cartState.length>0&&<CartCounter cartState={cartState}/>}
+              </div>
             </div>
           )}
         </div>

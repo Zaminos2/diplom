@@ -67,7 +67,7 @@
     border-radius: 13px;
     padding: 1em;
     gap: 1em;
-    max-height: 18em;
+    max-height: 20em;
 }
 .orderInfo{
     display: flex;
@@ -97,6 +97,7 @@
     font-size: 1.4em;
     cursor: pointer;
 }
+
 @media (max-width: 400px){
     .cartItemContainer{
         padding: 1em 1em 0 1em;
