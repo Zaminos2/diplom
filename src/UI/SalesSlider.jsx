@@ -9,10 +9,12 @@ import "swiper/css/pagination";
 import DiscountProductCard from "../components/DiscountProductKard";
 import { calkulateDiscount } from "../utils";
 import "../components/styles/salesSection.css"
+import LoadingComponent from "./LoadingComponent";
+import ServerError from "./ServerError";
 
 function SalesSlider() {
   const dispach = useDispatch();
-  const salesState = useSelector((state)=> state.salesData.salesState);
+  const {salesState,statusState} = useSelector((state)=> state.salesData);
 
 
   useEffect(() => {
@@ -21,6 +23,8 @@ function SalesSlider() {
   return (
     <section className="salesSection">
         <h2 id="SalesSection" className="salesSectionTitle">Sale</h2>
+        {statusState==='pending'&&<LoadingComponent/>}
+            {statusState==='rejected'&&<ServerError/>}
     <Swiper
       slidesPerView={4}
      slidesPerGroup={4}

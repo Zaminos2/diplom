@@ -5,6 +5,8 @@ import { feachSales } from "../core/redux/salesSlice";
 import '../components/styles/productsInCategory.css';
 import SalesFilterComponent from "../UI/SalesFilterComponent";
 import LoadingComponent from "../UI/LoadingComponent";
+import ServerError from "../UI/ServerError";
+
 
 function AllSales(){
     const dispach = useDispatch();
@@ -20,6 +22,7 @@ function AllSales(){
             <h1 className="salesSectionTitle">All Sales</h1>
             <SalesFilterComponent/>
             {statusState==='pending'&&<LoadingComponent/>}
+            {statusState==='rejected'&&<ServerError/>}
             <div className="productsContainer">
                 {renderProducts(sortArray(productsFilter(discontFilter(salesState, true), minPrice, maxPrice),sortStatus))}
             </div>

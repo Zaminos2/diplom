@@ -3,6 +3,7 @@ import CatalogSwiper from "./CatalogSwiper";
 import './styles/catalog.css';
 import { useSelector } from "react-redux";
 import LoadingComponent from "../UI/LoadingComponent";
+import ServerError from "../UI/ServerError";
 
 
 function Catalog(){
@@ -15,6 +16,7 @@ function Catalog(){
             <button className="allCategories" onClick={()=>{navigate('/categories')}}>All categories</button>
         </div>
         {statusState==="pending"&&<LoadingComponent/>}
+        {statusState==="rejected"&&<ServerError/>}
         <CatalogSwiper/>
         </div>
     )

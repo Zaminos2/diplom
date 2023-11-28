@@ -9,3 +9,8 @@
     object-fit: contain;
    
 }
+@media(max-width: 400px){
+    .categoriesWrap{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
